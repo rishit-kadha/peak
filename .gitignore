@@ -1,0 +1,64 @@
+# ── Secrets & environment ────────────────────────────────
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+secrets/
+credentials.json
+
+# ── Go ────────────────────────────────────────────────────
+/peak
+/bin/
+/tmp/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Go workspace / module cache artifacts
+go.work
+go.work.sum
+
+# Air / live-reload tooling
+.air.toml.local
+tmp/
+
+# ── Postgres / Docker ─────────────────────────────────────
+*.sql
+*.dump
+pgdata/
+backups/
+docker-compose.override.yml
+
+# ── Cloudflare Tunnel ─────────────────────────────────────
+cloudflared/
+*.cloudflared.json
+cert.pem
+
+# ── AI / LLM related ──────────────────────────────────────
+.gemini/
+*.gguf
+*.bin
+model_cache/
+
+# ── Charts / generated output ─────────────────────────────
+charts/output/
+*.png
+!docs/**/*.png
+
+# ── Editor ────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# ── Misc local artifacts ───────────────────────────────────
+*.log
+*.tar.gz
+node_modules/
