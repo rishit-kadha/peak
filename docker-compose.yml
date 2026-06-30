@@ -1,0 +1,7 @@
+services:
+  gin-test:
+    build: .
+    container_name: gin-test
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
