@@ -1,7 +1,20 @@
 services:
-  gin-test:
+  peak-bot:
     build: .
-    container_name: gin-test
-    restart: unless-stopped
-    ports:
-      - "8080:8080"
+    container_name: peak-bot-dev
+    env_file:
+      - .env.dev
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:18
+    container_name: peak-postgres-dev
+    env_file:
+      - .env.dev
+    volumes:
+      - postgres_dev:/var/lib/postgresql
+      - ./sql/schema.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  postgres_dev:
